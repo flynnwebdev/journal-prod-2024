@@ -1,7 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import useStore from './store'
 
-const Home = ({ entries }) => {
+const Home = () => {
+    const { entries } = useStore()
+
     return (
         <>
             <h2 className="my-5 is-size-5">Entries</h2>
