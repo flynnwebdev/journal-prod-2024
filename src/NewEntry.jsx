@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
+import useStore from "./store"
 
-const NewEntry = ({ categories, addEntry }) => {
+const NewEntry = () => {
+    const { categories, addEntry } = useStore(state => ({categories: state.categories, addEntry: state.addEntry}))
+
     const [content, setContent] = useState("")
 
     const nav = useNavigate()
